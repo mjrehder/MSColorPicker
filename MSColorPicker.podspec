@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/mjrehder/MSColorPicker"
   s.license          = 'MIT'
   s.author           = { "Maksym Shcheglov" => "maxscheglov@gmail.com" }
-  s.source           = { :git => "https://github.com/mjrehder/MSColorPicker.git", :branch => ‘master’ }
+  s.source           = { :git => "https://github.com/mjrehder/MSColorPicker.git" }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
