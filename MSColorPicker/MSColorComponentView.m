@@ -28,12 +28,12 @@
 #import "MSSliderView.h"
 
 // Temporary disabled the color component editing via text field
-//#define COLOR_TEXT_FIELD_ENABLED
+#define COLOR_TEXT_FIELD_ENABLED
 
 extern CGFloat const MSRGBColorComponentMaxValue;
 static CGFloat const MSColorComponentViewSpacing = 5.0f;
 static CGFloat const MSColorComponentLabelWidth = 60.0f;
-//static CGFloat const MSColorComponentTextFieldWidth = 50.0f;
+static CGFloat const MSColorComponentTextFieldWidth = 50.0f;
 
 @interface MSColorComponentView () <UITextFieldDelegate>
 {
