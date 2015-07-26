@@ -34,7 +34,7 @@ extern CGFloat const MSRGBColorComponentMaxValue;
 static CGFloat const MSColorSampleViewHeight = 30.0f;
 static CGFloat const MSViewMargin = 20.0f;
 static CGFloat const MSSliderViewMargin = 30.0f;
-static NSUInteger const MSRGBColorComponentsSize = 3;
+static NSUInteger const MSRGBColorComponentsSize = 4;
 
 @interface MSRGBView ()
 {
@@ -101,8 +101,8 @@ static NSUInteger const MSRGBColorComponentsSize = 3;
     [self addSubview:_colorSample];
 
     NSMutableArray *tmp = [NSMutableArray array];
-    NSArray *titles = @[NSLocalizedString(@"Red", ), NSLocalizedString(@"Green", ), NSLocalizedString(@"Blue", )];
-    NSArray *maxValues = @[@(MSRGBColorComponentMaxValue), @(MSRGBColorComponentMaxValue), @(MSRGBColorComponentMaxValue)];
+    NSArray *titles = @[NSLocalizedString(@"Red", ), NSLocalizedString(@"Green", ), NSLocalizedString(@"Blue", ), NSLocalizedString(@"Alpha", )];
+    NSArray *maxValues = @[@(MSRGBColorComponentMaxValue), @(MSRGBColorComponentMaxValue), @(MSRGBColorComponentMaxValue), @(MSRGBColorComponentMaxValue)];
 
     for (NSUInteger i = 0; i < MSRGBColorComponentsSize; ++i) {
         UIControl *colorComponentView = [self ms_colorComponentViewWithTitle:titles[i] tag:i maxValue:[maxValues[i] floatValue]];

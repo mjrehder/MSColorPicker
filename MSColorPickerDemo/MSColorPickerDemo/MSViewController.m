@@ -28,6 +28,8 @@
 
 @interface MSViewController () <UIPopoverPresentationControllerDelegate, MSColorSelectionViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *colorView;
+
 @end
 
 @implementation MSViewController
@@ -40,7 +42,7 @@
         destNav.popoverPresentationController.delegate = self;
         MSColorSelectionViewController *colorSelectionController = (MSColorSelectionViewController *)destNav.visibleViewController;
         colorSelectionController.delegate = self;
-        colorSelectionController.color = self.view.backgroundColor;
+        colorSelectionController.color = self.colorView.backgroundColor;
 
         if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) {
             UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", ) style:UIBarButtonItemStyleDone target:self action:@selector(ms_dismissViewController:)];
@@ -61,7 +63,7 @@
     navCtrl.preferredContentSize = [colorSelectionController.view systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
 
     colorSelectionController.delegate = self;
-    colorSelectionController.color = self.view.backgroundColor;
+    colorSelectionController.color = self.colorView.backgroundColor;
 
     if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) {
         UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", ) style:UIBarButtonItemStyleDone target:self action:@selector(ms_dismissViewController:)];
@@ -75,7 +77,7 @@
 
 - (void)colorViewController:(MSColorSelectionViewController *)colorViewCntroller didChangeColor:(UIColor *)color
 {
-    self.view.backgroundColor = color;
+    self.colorView.backgroundColor = color;
 }
 
 //#pragma mark - UIAdaptivePresentationControllerDelegate methods
